@@ -56,7 +56,7 @@ def get_help(update: Update, context: CallbackContext):
         f'',
         f'Этот <b>бот</b> сделан пользователем (weldoy)',
         f'Если кому-то интересно, вот мой <a href="github.com/weldoy">GitHub</a> :3',
-        f'Предназначен для развлечений :)',
+        f'Предназначен для жизни и развлечений :)',
         f'',
         f'Чтобы узнать <b>полный функционал</b>, напишите /menu'
     ]
@@ -101,6 +101,89 @@ def table_react(update: Update, context: CallbackContext):
     logger.info(f'{update.effective_user.username} вызвал функцию keyboard_react')
     if query.data == 'monday':
         logger.info(f'{update.effective_user.username} вызвал функцию monday')
+        buttons = [
+            ['Классный час'],
+            ['Главный урок х2'],
+            ['Биология'],
+            ['Химия'],
+            ['Математика'],
+            ['Физика'],
+            ['Математика'],
+            ['Искусство']
+        ]
+        keyboard_button = [[InlineKeyboardButton(text=text, callback_data=text) for text in row] for row in buttons]
+        keyboard = InlineKeyboardMarkup(keyboard_button)
+        text = 'Понедельник :)'
+        context.bot.send_message(update.effective_chat.id, text, reply_markup=keyboard)
+
+    if query.data == 'tuesday':
+        logger.info(f'{update.effective_user.username} вызвал функцию tuesday')
+        buttons = [
+            ['Главный урок х2'],
+            ['Физика'],
+            ['Экономика'],
+            ['География'],
+            ['Английский'],
+            ['Эвретмия'],
+            ['Физкультура']
+        ]
+        keyboard_button = [[InlineKeyboardButton(text=text, callback_data=text) for text in row] for row in buttons]
+        keyboard = InlineKeyboardMarkup(keyboard_button)
+        text = 'Вторник :)'
+        context.bot.send_message(update.effective_chat.id, text, reply_markup=keyboard)
+
+    if query.data == 'wednesday':
+        logger.info(f'{update.effective_user.username} вызвал функцию wednesday')
+        buttons = [
+            ['Главный урок х2'],
+            ['Математика'],
+            ['Информатика'],
+            ['История'],
+            ['Русский'],
+            ['Музыка'],
+            ['Искусство']
+        ]
+        keyboard_button = [[InlineKeyboardButton(text=text, callback_data=text) for text in row] for row in buttons]
+        keyboard = InlineKeyboardMarkup(keyboard_button)
+        text = 'Среда :)'
+        context.bot.send_message(update.effective_chat.id, text, reply_markup=keyboard)
+
+    if query.data == 'thursday':
+        logger.info(f'{update.effective_user.username} вызвал функцию thursday')
+        buttons = [
+            ['Главный урок х2'],
+            ['Математика'],
+            ['Английский'],
+            ['География'],
+            ['Математика'],
+            ['Спектакль х2']
+        ]
+        keyboard_button = [[InlineKeyboardButton(text=text, callback_data=text) for text in row] for row in buttons]
+        keyboard = InlineKeyboardMarkup(keyboard_button)
+        text = 'Четверг :)'
+        context.bot.send_message(update.effective_chat.id, text, reply_markup=keyboard)
+
+    if query.data == 'friday':
+        logger.info(f'{update.effective_user.username} вызвал функцию friday')
+        buttons = [
+            ['Главный урок х2'],
+            ['Математика'],
+            ['Обществознание'],
+            ['Экономика'],
+            ['Английский'],
+            ['Информатика х2']
+        ]
+        keyboard_button = [[InlineKeyboardButton(text=text, callback_data=text) for text in row] for row in buttons]
+        keyboard = InlineKeyboardMarkup(keyboard_button)
+        text = 'Пятница :)'
+        context.bot.send_message(update.effective_chat.id, text, reply_markup=keyboard)
+
+
+"""def table_react(update: Update, context: CallbackContext):
+    query = update.callback_query
+    logger.info(f'{update.effective_user.username} вызвал функцию keyboard_react')
+    if query.data == 'monday':
+        logger.info(f'{update.effective_user.username} вызвал функцию monday')
         img1 = 'https://imgur.com/mQ2ICKI'
         context.bot.send_message(update.effective_chat.id, 'Ваше расписание!',
                                  reply_markup=ReplyKeyboardRemove())
@@ -132,7 +215,7 @@ def table_react(update: Update, context: CallbackContext):
         img5 = 'https://imgur.com/OWXN3fH'
         context.bot.send_message(update.effective_chat.id, 'Ваше расписание!',
                                  reply_markup=ReplyKeyboardRemove())
-        context.bot.send_photo(update.effective_chat.id, img5)
+        context.bot.send_photo(update.effective_chat.id, img5)"""
 
 
 ERROR_MESSAGE = 'Ошибка при запросе к основному API: {error}'
