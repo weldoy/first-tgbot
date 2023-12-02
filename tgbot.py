@@ -3,7 +3,7 @@ from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, InlineKeyboardBut
 from telegram.ext import Updater, Dispatcher, MessageHandler, CommandHandler, CallbackQueryHandler
 from telegram.ext import CallbackContext, Filters
 
-from key import TOKEN
+from secret import TOKEN
 
 import requests
 import logging
