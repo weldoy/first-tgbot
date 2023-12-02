@@ -68,7 +68,7 @@ def get_help(update: Update, context: CallbackContext):
 def unknown(update: Update, context: CallbackContext):
     logger.info(f'{update.effective_user.username} ввел неправильную команду')
     context.bot.send_message(chat_id=update.effective_chat.id,
-                             text="Извините, я не знаю, что это :/")
+                             text="Что это? :/")
 
 
 def menu(update: Update, context: CallbackContext):
@@ -177,45 +177,6 @@ def table_react(update: Update, context: CallbackContext):
         keyboard = InlineKeyboardMarkup(keyboard_button)
         text = 'Пятница :)'
         context.bot.send_message(update.effective_chat.id, text, reply_markup=keyboard)
-
-
-"""def table_react(update: Update, context: CallbackContext):
-    query = update.callback_query
-    logger.info(f'{update.effective_user.username} вызвал функцию keyboard_react')
-    if query.data == 'monday':
-        logger.info(f'{update.effective_user.username} вызвал функцию monday')
-        img1 = 'https://imgur.com/mQ2ICKI'
-        context.bot.send_message(update.effective_chat.id, 'Ваше расписание!',
-                                 reply_markup=ReplyKeyboardRemove())
-        context.bot.send_photo(update.effective_chat.id, img1)
-
-    if query.data == 'tuesday':
-        logger.info(f'{update.effective_user.username} вызвал функцию tuesday')
-        img2 = 'https://imgur.com/UnzRRGX'
-        context.bot.send_message(update.effective_chat.id, 'Ваше расписание!',
-                                 reply_markup=ReplyKeyboardRemove())
-        context.bot.send_photo(update.effective_chat.id, img2)
-
-    if query.data == 'wednesday':
-        logger.info(f'{update.effective_user.username} вызвал функцию wednesday')
-        img3 = 'https://imgur.com/WHtzRFu'
-        context.bot.send_message(update.effective_chat.id, 'Ваше расписание!',
-                                 reply_markup=ReplyKeyboardRemove())
-        context.bot.send_photo(update.effective_chat.id, img3)
-
-    if query.data == 'thursday':
-        logger.info(f'{update.effective_user.username} вызвал функцию thursday')
-        img4 = 'https://imgur.com/ZvMeJUd'
-        context.bot.send_message(update.effective_chat.id, 'Ваше расписание!',
-                                 reply_markup=ReplyKeyboardRemove())
-        context.bot.send_photo(update.effective_chat.id, img4)
-
-    if query.data == 'friday':
-        logger.info(f'{update.effective_user.username} вызвал функцию friday')
-        img5 = 'https://imgur.com/OWXN3fH'
-        context.bot.send_message(update.effective_chat.id, 'Ваше расписание!',
-                                 reply_markup=ReplyKeyboardRemove())
-        context.bot.send_photo(update.effective_chat.id, img5)"""
 
 
 ERROR_MESSAGE = 'Ошибка при запросе к основному API: {error}'
